@@ -1,0 +1,5 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "git -C \"c:\\Users\\ankit_jha\\VSCodeProjects\\skills-build-applications-w-copilot-agent-mode\"": true
+    }
+}
