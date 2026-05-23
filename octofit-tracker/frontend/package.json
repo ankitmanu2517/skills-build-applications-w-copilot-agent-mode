@@ -1,13 +1,13 @@
 {
-  "name": "frontend",
+  "name": "octofit-tracker-frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 5173 --host",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview --port 5173 --host"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
