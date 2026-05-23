@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
-import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import { connectDatabase } from './config/database';
 import { activitiesRouter } from './routes/activities';
 import { leaderboardRouter } from './routes/leaderboard';
 import { teamsRouter } from './routes/teams';
@@ -32,12 +32,7 @@ app.use(
 app.use(express.json());
 
 // MongoDB connection
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/octofit_db';
-
-mongoose
-  .connect(MONGO_URI)
-  .then(() => console.log('Connected to MongoDB (octofit_db)'))
-  .catch((err) => console.error('MongoDB connection error:', err));
+connectDatabase().catch((err) => console.error('MongoDB connection error:', err));
 
 // Health check
 app.get('/api/health', (_req, res) => {
